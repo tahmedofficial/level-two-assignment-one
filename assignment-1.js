@@ -61,7 +61,23 @@ function processValue(value) {
         return value * 2;
     }
 }
-console.log(processValue("hello"));
-console.log(processValue(10));
-// const result = concatenateArrays([1, 2], [3, 4], [5]);
-// console.log(result);
+function getMostExpensiveProduct(products) {
+    if (products.length === 0) {
+        return null;
+    }
+    var highestPriceProduct = products[0];
+    for (var i = 1; i < products.length; i++) {
+        if (products[i].price > highestPriceProduct.price) {
+            highestPriceProduct = products[i];
+        }
+    }
+    return highestPriceProduct;
+}
+var products = [
+    { name: "Pen", price: 10 },
+    { name: "Notebook", price: 25 },
+    { name: "Bag", price: 50 }
+];
+var result = getMostExpensiveProduct(products);
+console.log(result);
+// Output: { name: "Bag", price: 50 }

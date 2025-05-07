@@ -53,12 +53,30 @@ function processValue(value: string | number): number {
     }
 }
 
+interface Product {
+    name: string;
+    price: number;
+}
 
-console.log(processValue("hello"));
-console.log(processValue(10));
+function getMostExpensiveProduct(products: Product[]): Product | null {
+
+    if (products.length === 0) {
+        return null;
+    }
+
+    let highestPriceProduct: Product = products[0];
+    for (let i = 1; i < products.length; i++) {
+        if (products[i].price > highestPriceProduct.price) {
+            highestPriceProduct = products[i];
+        }
+    }
+    return highestPriceProduct;
+}
+
+// problem 7
 
 
-// const result = concatenateArrays([1, 2], [3, 4], [5]);
+// const result = getMostExpensiveProduct(products);
 // console.log(result);
 
 
