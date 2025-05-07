@@ -31,7 +31,6 @@ function concatenateArrays() {
     }
     return arrays.reduce(function (accumulator, currentValue) { return accumulator.concat(currentValue); }, []);
 }
-// Problem 3
 var Vehicle = /** @class */ (function () {
     function Vehicle(make, year) {
         this.make = make;
@@ -54,8 +53,15 @@ var Car = /** @class */ (function (_super) {
     };
     return Car;
 }(Vehicle));
-var car = new Car("Toyota", 2020, "Corolla");
-console.log("info", car.getInfo());
-console.log("model", car.getModel());
+function processValue(value) {
+    if (typeof value === "string") {
+        return value.length;
+    }
+    else {
+        return value * 2;
+    }
+}
+console.log(processValue("hello"));
+console.log(processValue(10));
 // const result = concatenateArrays([1, 2], [3, 4], [5]);
 // console.log(result);
