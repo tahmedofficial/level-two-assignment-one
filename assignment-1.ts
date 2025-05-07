@@ -91,16 +91,14 @@ function getDayType(day: Day): string {
     }
 }
 
-// problem 8
-
-
-
-// const result = getDayType(Day.Sunday);
-// console.log(result);
-
-
-
-
-
-
-
+async function squareAsync(n: number): Promise<number> {
+    return new Promise((resolve, rejects) => {
+        setTimeout(() => {
+            if (n < 0) {
+                rejects(new Error("Negative number not allowed"));
+            } else {
+                resolve(n * n);
+            }
+        }, 1000)
+    })
+}
