@@ -6,37 +6,18 @@ function formatString(input, toUpper) {
         return input.toUpperCase();
     }
 }
-var carItem = [
-    {
-        title: "car",
-        rating: 4
-    },
-    {
-        title: "bike",
-        rating: 3
-    },
-    {
-        title: "ricsha",
-        rating: 2
-    },
-    {
-        title: "biman",
-        rating: 6
-    },
-    {
-        title: "halicopter",
-        rating: 5
-    },
-];
 function filterByRating(items) {
     return items.filter(function (item) { return item.rating >= 4; });
 }
-var books = [
-    { title: "Book A", rating: 4.5 },
-    { title: "Book B", rating: 3.2 },
-    { title: "Book C", rating: 5.0 }
-];
-// filterByRating(books);
-// Output: [ { title: "Book A", rating: 4.5 }, { title: "Book C", rating: 5.0 } ]
-var result = filterByRating(carItem);
+// Problem 3
+function concatenateArrays() {
+    var arrays = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        arrays[_i] = arguments[_i];
+    }
+    return arrays.reduce(function (accumulator, currentValue) { return accumulator.concat(currentValue); }, []);
+}
+// Output: ["a", "b", "c"]
+// Output: [1, 2, 3, 4, 5]
+var result = concatenateArrays([1, 2], [3, 4], [5]);
 console.log(result);
