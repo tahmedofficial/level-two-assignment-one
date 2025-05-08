@@ -7,5 +7,18 @@ While `interface` and `type` in TypeScript may seem similar, there are key diffe
 - **Describing Shapes**: Both `interface` and `type` can be used to describe the shape of objects and function signatures.
 - **Additional Use Cases for `type`**: Unlike `interface`, `type` can also represent primitive types, union types, intersection types, and tuples.
 
-### Summary
-Use `interface` when you need extensibility and declaration merging. Use `type` when working with complex types like unions, primitives, or tuples.
+
+## The Use of the `keyof` Keyword in TypeScript
+
+The `keyof` keyword in TypeScript is used to extract the keys of a given object type as a union of string literal types.
+
+### Example:
+
+```ts
+type Person = {
+  name: string;
+  age: number;
+};
+
+type PersonKeys = keyof Person;
+// PersonKeys is now "name" | "age"
